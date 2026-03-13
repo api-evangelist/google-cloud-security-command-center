@@ -1,0 +1,59 @@
+name: Google Cloud Security Command Center
+description: >-
+  Google Cloud Security Command Center (SCC) is a security and risk management
+  platform for Google Cloud that helps organizations identify misconfigurations,
+  vulnerabilities, and threats across their cloud assets. It provides centralized
+  visibility into cloud resources, security findings, and compliance status,
+  enabling security teams to detect, investigate, and respond to threats.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-cloud-security-command-center/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+- Security
+- Cloud Security
+- Threat Detection
+- Vulnerability Management
+- Compliance
+- Risk Management
+apis:
+- name: Security Command Center API
+  description: >-
+    The Security Command Center API provides programmatic access to security
+    findings, assets, and sources within Google Cloud. Developers can use the API
+    to list and manage security findings, create and manage notification configs,
+    run asset discovery, and configure organization-level security settings. The
+    API supports managing sources, findings, and security marks across an
+    organization's cloud resources.
+  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://cloud.google.com/security-command-center/docs
+  baseURL: https://securitycenter.googleapis.com
+  tags:
+  - Security Findings
+  - Assets
+  - Threat Detection
+  - Vulnerability Scanning
+  properties:
+  - type: Documentation
+    url: https://cloud.google.com/security-command-center/docs/reference/rest
+  - type: OpenAPI
+    url: openapi/security-command-center-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/google-cloud-security-command-center-finding-schema.json
+common:
+- type: GettingStarted
+  url: https://cloud.google.com/security-command-center/docs/quickstart
+- type: Pricing
+  url: https://cloud.google.com/security-command-center/pricing
+- type: Authentication
+  url: https://cloud.google.com/security-command-center/docs/authentication
+- type: Support
+  url: https://cloud.google.com/security-command-center/docs/support
+- type: Status
+  url: https://status.cloud.google.com
+- type: JSON-LD
+  url: json-ld/google-cloud-security-command-center-context.jsonld
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

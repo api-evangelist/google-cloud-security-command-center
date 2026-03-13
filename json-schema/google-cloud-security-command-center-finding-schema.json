@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cloud.google.com/schemas/securitycenter/finding.json",
+  "title": "Google Cloud Security Command Center Finding",
+  "description": "Schema for a Security Command Center finding, representing a security issue or threat detected in a cloud resource.",
+  "type": "object",
+  "required": ["category", "resourceName", "state"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The relative resource name of the finding"
+    },
+    "parent": {
+      "type": "string",
+      "description": "The relative resource name of the source the finding belongs to"
+    },
+    "state": {
+      "type": "string",
+      "description": "The state of the finding",
+      "enum": ["ACTIVE", "INACTIVE"]
+    },
+    "category": {
+      "type": "string",
+      "description": "The additional taxonomy group within findings from a given source"
+    },
+    "resourceName": {
+      "type": "string",
+      "description": "The full resource name of the Google Cloud resource this finding is for"
+    },
+    "severity": {
+      "type": "string",
+      "description": "The severity of the finding",
+      "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]
+    },
+    "externalUri": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI that points to a web page with additional information about the finding"
+    },
+    "sourceProperties": {
+      "type": "object",
+      "description": "Source-specific properties that are set by the source that writes the finding",
+      "additionalProperties": true
+    },
+    "eventTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time the finding was first detected"
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time at which the finding was created in Security Command Center"
+    },
+    "securityMarks": {
+      "$ref": "#/$defs/SecurityMarks",
+      "description": "User-specified security marks applied to the finding"
+    },
+    "vulnerability": {
+      "$ref": "#/$defs/Vulnerability",
+      "description": "Represents vulnerability-specific fields like CVE and CVSS scores"
+    }
+  },
+  "$defs": {
+    "SecurityMarks": {
+      "type": "object",
+      "description": "User-specified security marks attached to the finding",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The relative resource name of the SecurityMarks"
+        },
+        "marks": {
+          "type": "object",
+          "description": "Mutable user-specified security marks",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Vulnerability": {
+      "type": "object",
+      "description": "Vulnerability information for the finding",
+      "properties": {
+        "cve": {
+          "type": "object",
+          "description": "CVE information",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "The unique CVE identifier"
+            },
+            "cvssv3": {
+              "type": "object",
+              "properties": {
+                "baseScore": {
+                  "type": "number",
+                  "description": "The base score for CVSS v3"
+                },
+                "attackVector": {
+                  "type": "string",
+                  "enum": ["NETWORK", "ADJACENT", "LOCAL", "PHYSICAL"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
