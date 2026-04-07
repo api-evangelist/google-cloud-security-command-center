@@ -34,7 +34,7 @@ paths:
   /organizations/{organizationId}/sources:
     get:
       operationId: listSources
-      summary: List sources
+      summary: Google Cloud Security Command Center List sources
       description: Lists all sources belonging to an organization.
       tags:
         - Sources
@@ -55,7 +55,7 @@ paths:
           description: Forbidden
     post:
       operationId: createSource
-      summary: Create a source
+      summary: Google Cloud Security Command Center Create a source
       description: Creates a source within an organization.
       tags:
         - Sources
@@ -77,7 +77,7 @@ paths:
   /organizations/{organizationId}/sources/{sourceId}/findings:
     get:
       operationId: listFindings
-      summary: List findings
+      summary: Google Cloud Security Command Center List findings
       description: >-
         Lists an organization or source's findings. To list across all sources
         use a sourceId of -.
@@ -107,7 +107,7 @@ paths:
                 $ref: '#/components/schemas/ListFindingsResponse'
     post:
       operationId: createFinding
-      summary: Create a finding
+      summary: Google Cloud Security Command Center Create a finding
       description: Creates a finding within a source.
       tags:
         - Findings
@@ -136,7 +136,7 @@ paths:
   /organizations/{organizationId}/assets:
     get:
       operationId: listAssets
-      summary: List assets
+      summary: Google Cloud Security Command Center List assets
       description: Lists an organization's assets.
       tags:
         - Assets
@@ -159,7 +159,7 @@ paths:
   /organizations/{organizationId}/notificationConfigs:
     get:
       operationId: listNotificationConfigs
-      summary: List notification configs
+      summary: Google Cloud Security Command Center List notification configs
       description: Lists notification configs for an organization.
       tags:
         - NotificationConfigs
@@ -176,7 +176,7 @@ paths:
                 $ref: '#/components/schemas/ListNotificationConfigsResponse'
     post:
       operationId: createNotificationConfig
-      summary: Create a notification config
+      summary: Google Cloud Security Command Center Create a notification config
       description: Creates a notification config for an organization.
       tags:
         - NotificationConfigs
