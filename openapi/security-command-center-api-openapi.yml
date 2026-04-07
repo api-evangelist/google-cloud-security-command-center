@@ -18,16 +18,14 @@ servers:
   - url: https://securitycenter.googleapis.com/v1
     description: Production Server
 tags:
-  - name: Organizations
-    description: Organization-level security operations
-  - name: Sources
-    description: Operations for managing security sources
-  - name: Findings
-    description: Operations for managing security findings
   - name: Assets
     description: Operations for listing and managing cloud assets
+  - name: Findings
+    description: Operations for managing security findings
   - name: NotificationConfigs
     description: Operations for managing notification configurations
+  - name: Sources
+    description: Operations for managing security sources
 security:
   - oauth2: []
 paths:

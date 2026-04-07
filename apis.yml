@@ -13,12 +13,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Security
   - Cloud Security
-  - Threat Detection
-  - Vulnerability Management
   - Compliance
   - Risk Management
+  - Security
+  - Threat Detection
+  - Vulnerability Management
 apis:
   - name: Security Command Center API
     description: >-
@@ -30,8 +30,8 @@ apis:
     humanURL: https://cloud.google.com/security-command-center/docs
     baseURL: https://securitycenter.googleapis.com
     tags:
-      - Security Findings
       - Assets
+      - Security Findings
       - Threat Detection
       - Vulnerability Scanning
     properties:
