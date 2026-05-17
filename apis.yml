@@ -41,14 +41,14 @@ apis:
         url: openapi/security-command-center-api-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/security-command-center/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/security-command-center/docs/quickstart
       - type: JSONSchema
         url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
   - type: Portal
     url: https://cloud.google.com/security-command-center
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/security-command-center/docs/quickstart
   - type: Documentation
     url: https://cloud.google.com/security-command-center/docs
@@ -56,15 +56,15 @@ common:
     url: https://cloud.google.com/security-command-center/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/security-command-center/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/security-command-center/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-cloud-security-command-center-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
