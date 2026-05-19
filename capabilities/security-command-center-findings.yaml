@@ -1,0 +1,127 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Security Command Center API — Findings
+  description: 'Google Cloud Security Command Center API — Findings. 2 operations. Lead operation: Google Cloud Security Command
+    Center List findings. Self-contained Naftiko capability covering one Google Cloud Security Command Center business surface.'
+  tags:
+  - Google Cloud Security Command Center
+  - Findings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY: GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: security-command-center-findings
+    baseUri: https://securitycenter.googleapis.com/v1
+    description: Google Cloud Security Command Center API — Findings business capability. Self-contained, no shared references.
+    resources:
+    - name: organizations-organizationId-sources-sourceId-findings
+      path: /organizations/{organizationId}/sources/{sourceId}/findings
+      operations:
+      - name: listfindings
+        method: GET
+        description: Google Cloud Security Command Center List findings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: filter
+          in: query
+          type: string
+          description: Expression that defines the filter to apply across findings
+        - name: orderBy
+          in: query
+          type: string
+          description: Expression that defines what fields and order to use for sorting
+      - name: createfinding
+        method: POST
+        description: Google Cloud Security Command Center Create a finding
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: findingId
+          in: query
+          type: string
+          description: Unique identifier for the finding
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: security-command-center-findings-rest
+    port: 8080
+    description: REST adapter for Google Cloud Security Command Center API — Findings. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/organizations/{organizationid}/sources/{sourceid}/findings
+      name: organizations-organizationid-sources-sourceid-findings
+      description: REST surface for organizations-organizationId-sources-sourceId-findings.
+      operations:
+      - method: GET
+        name: listfindings
+        description: Google Cloud Security Command Center List findings
+        call: security-command-center-findings.listfindings
+        with:
+          filter: rest.filter
+          orderBy: rest.orderBy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createfinding
+        description: Google Cloud Security Command Center Create a finding
+        call: security-command-center-findings.createfinding
+        with:
+          findingId: rest.findingId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: security-command-center-findings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Security Command Center API — Findings. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-security-command-center
+      description: Google Cloud Security Command Center List findings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: security-command-center-findings.listfindings
+      with:
+        filter: tools.filter
+        orderBy: tools.orderBy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-security-command-center-2
+      description: Google Cloud Security Command Center Create a finding
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: security-command-center-findings.createfinding
+      with:
+        findingId: tools.findingId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

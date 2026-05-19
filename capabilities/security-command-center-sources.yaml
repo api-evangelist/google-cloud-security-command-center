@@ -1,0 +1,105 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Security Command Center API — Sources
+  description: 'Google Cloud Security Command Center API — Sources. 2 operations. Lead operation: Google Cloud Security Command
+    Center List sources. Self-contained Naftiko capability covering one Google Cloud Security Command Center business surface.'
+  tags:
+  - Google Cloud Security Command Center
+  - Sources
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY: GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: security-command-center-sources
+    baseUri: https://securitycenter.googleapis.com/v1
+    description: Google Cloud Security Command Center API — Sources business capability. Self-contained, no shared references.
+    resources:
+    - name: organizations-organizationId-sources
+      path: /organizations/{organizationId}/sources
+      operations:
+      - name: listsources
+        method: GET
+        description: Google Cloud Security Command Center List sources
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsource
+        method: POST
+        description: Google Cloud Security Command Center Create a source
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_SECURITY_COMMAND_CENTER_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: security-command-center-sources-rest
+    port: 8080
+    description: REST adapter for Google Cloud Security Command Center API — Sources. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/organizations/{organizationid}/sources
+      name: organizations-organizationid-sources
+      description: REST surface for organizations-organizationId-sources.
+      operations:
+      - method: GET
+        name: listsources
+        description: Google Cloud Security Command Center List sources
+        call: security-command-center-sources.listsources
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsource
+        description: Google Cloud Security Command Center Create a source
+        call: security-command-center-sources.createsource
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: security-command-center-sources-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Security Command Center API — Sources. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-security-command-center
+      description: Google Cloud Security Command Center List sources
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: security-command-center-sources.listsources
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-security-command-center-2
+      description: Google Cloud Security Command Center Create a source
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: security-command-center-sources.createsource
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
