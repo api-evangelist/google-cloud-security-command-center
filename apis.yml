@@ -5,7 +5,7 @@ description: >-
   organizations identify misconfigurations, vulnerabilities, and threats across their cloud assets. It provides
   centralized visibility into cloud resources, security findings, and compliance status, enabling security teams to
   detect, investigate, and respond to threats.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-security-command-center/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -24,7 +24,7 @@ apis:
       The Security Command Center API provides programmatic access to security findings, assets, and sources within
       Google Cloud. Developers can use the API to list and manage security findings, create and manage notification
       configs, run asset discovery, and configure organization-level security settings.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/security-command-center/docs
     baseURL: https://securitycenter.googleapis.com
     tags:
