@@ -44,6 +44,12 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-security-command-center-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-security-command-center-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-security-command-center-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-security-command-center-scopes.yml
   - type: GitHubOrganization
