@@ -44,6 +44,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-security-command-center-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
@@ -68,6 +70,8 @@ common:
     url: json-ld/google-cloud-security-command-center-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
+  - url: https://cloud.google.com/feeds/scc-release-notes.xml
+    type: Blog
 integrations:
   - name: Become a Partner
 maintainers:
