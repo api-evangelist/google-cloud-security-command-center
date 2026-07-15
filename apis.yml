@@ -44,6 +44,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-security-command-center-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-security-command-center-vulnerability-disclosure.yml
   - type: DomainSecurity
