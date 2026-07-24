@@ -1,0 +1,167 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Security Command Center Assets Findings API
+  description: The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/security-command-center/docs/support
+  termsOfService: https://cloud.google.com/terms
+servers:
+- url: https://securitycenter.googleapis.com/v1
+  description: Production Server
+security:
+- oauth2: []
+tags:
+- name: Findings
+  description: Operations for managing security findings
+paths:
+  /organizations/{organizationId}/sources/{sourceId}/findings:
+    get:
+      operationId: listFindings
+      summary: Google Cloud Security Command Center List findings
+      description: Lists an organization or source's findings. To list across all sources use a sourceId of -.
+      tags:
+      - Findings
+      parameters:
+      - $ref: '#/components/parameters/organizationId'
+      - $ref: '#/components/parameters/sourceId'
+      - $ref: '#/components/parameters/pageSize'
+      - $ref: '#/components/parameters/pageToken'
+      - name: filter
+        in: query
+        description: Expression that defines the filter to apply across findings
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        description: Expression that defines what fields and order to use for sorting
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFindingsResponse'
+    post:
+      operationId: createFinding
+      summary: Google Cloud Security Command Center Create a finding
+      description: Creates a finding within a source.
+      tags:
+      - Findings
+      parameters:
+      - $ref: '#/components/parameters/organizationId'
+      - $ref: '#/components/parameters/sourceId'
+      - name: findingId
+        in: query
+        required: true
+        description: Unique identifier for the finding
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Finding'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Finding'
+components:
+  schemas:
+    ListFindingsResponse:
+      type: object
+      properties:
+        listFindingsResults:
+          type: array
+          items:
+            type: object
+            properties:
+              finding:
+                $ref: '#/components/schemas/Finding'
+        nextPageToken:
+          type: string
+        totalSize:
+          type: integer
+    Finding:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The relative resource name of the finding
+        parent:
+          type: string
+          description: The relative resource name of the source the finding belongs to
+        state:
+          type: string
+          enum:
+          - ACTIVE
+          - INACTIVE
+          description: The state of the finding
+        category:
+          type: string
+          description: The additional taxonomy group within findings from a given source
+        resourceName:
+          type: string
+          description: The full resource name of the Google Cloud resource this finding is for
+        severity:
+          type: string
+          enum:
+          - CRITICAL
+          - HIGH
+          - MEDIUM
+          - LOW
+          description: The severity of the finding
+        eventTime:
+          type: string
+          format: date-time
+          description: The time the finding was first detected
+        createTime:
+          type: string
+          format: date-time
+          description: The time at which the finding was created
+  parameters:
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
+    sourceId:
+      name: sourceId
+      in: path
+      required: true
+      description: The source ID
+      schema:
+        type: string
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
+      schema:
+        type: string
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+externalDocs:
+  description: Security Command Center API Documentation
+  url: https://cloud.google.com/security-command-center/docs/reference/rest

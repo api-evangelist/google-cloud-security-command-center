@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Security Command Center Assets NotificationConfigs API
+  description: The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.
+  version: v1
+  contact:
+    name: Google Cloud Support
+    url: https://cloud.google.com/security-command-center/docs/support
+  termsOfService: https://cloud.google.com/terms
+servers:
+- url: https://securitycenter.googleapis.com/v1
+  description: Production Server
+security:
+- oauth2: []
+tags:
+- name: NotificationConfigs
+  description: Operations for managing notification configurations
+paths:
+  /organizations/{organizationId}/notificationConfigs:
+    get:
+      operationId: listNotificationConfigs
+      summary: Google Cloud Security Command Center List notification configs
+      description: Lists notification configs for an organization.
+      tags:
+      - NotificationConfigs
+      parameters:
+      - $ref: '#/components/parameters/organizationId'
+      - $ref: '#/components/parameters/pageSize'
+      - $ref: '#/components/parameters/pageToken'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListNotificationConfigsResponse'
+    post:
+      operationId: createNotificationConfig
+      summary: Google Cloud Security Command Center Create a notification config
+      description: Creates a notification config for an organization.
+      tags:
+      - NotificationConfigs
+      parameters:
+      - $ref: '#/components/parameters/organizationId'
+      - name: configId
+        in: query
+        required: true
+        description: Unique identifier for the notification config
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationConfig'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationConfig'
+components:
+  schemas:
+    ListNotificationConfigsResponse:
+      type: object
+      properties:
+        notificationConfigs:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotificationConfig'
+        nextPageToken:
+          type: string
+    NotificationConfig:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The relative resource name of the notification config
+        description:
+          type: string
+          description: The description of the notification config
+        pubsubTopic:
+          type: string
+          description: The Pub/Sub topic to send notifications to
+        streamingConfig:
+          type: object
+          properties:
+            filter:
+              type: string
+              description: Expression that defines the filter to apply across findings
+  parameters:
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
+      schema:
+        type: string
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
+      schema:
+        type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud
+externalDocs:
+  description: Security Command Center API Documentation
+  url: https://cloud.google.com/security-command-center/docs/reference/rest
