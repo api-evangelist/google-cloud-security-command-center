@@ -5,7 +5,20 @@ description: >-
   organizations identify misconfigurations, vulnerabilities, and threats across their cloud assets. It provides
   centralized visibility into cloud resources, security findings, and compliance status, enabling security teams to
   detect, investigate, and respond to threats.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-security-command-center.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-security-command-center/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -19,31 +32,82 @@ tags:
   - Threat Detection
   - Vulnerability Management
 apis:
-  - name: Security Command Center API
-    description: >-
-      The Security Command Center API provides programmatic access to security findings, assets, and sources within
-      Google Cloud. Developers can use the API to list and manage security findings, create and manage notification
-      configs, run asset discovery, and configure organization-level security settings.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/security-command-center/docs
-    baseURL: https://securitycenter.googleapis.com
-    tags:
-      - Assets
-      - Security Findings
-      - Threat Detection
-      - Vulnerability Scanning
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/security-command-center/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/security-command-center-api-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/security-command-center/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/security-command-center/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/google-cloud-security-command-center-finding-schema.json
+- aid: google-cloud-security-command-center:google-cloud-security-command-center-assets-api
+  name: Google Cloud Security Command Center Assets API
+  description: Operations for listing and managing cloud assets
+  humanURL: https://cloud.google.com/security-command-center/docs
+  baseURL: https://securitycenter.googleapis.com
+  tags:
+  - Assets
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-security-command-center-assets-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/security-command-center/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/security-command-center/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/security-command-center/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-security-command-center-finding-schema.json
+- aid: google-cloud-security-command-center:google-cloud-security-command-center-findings-api
+  name: Google Cloud Security Command Center Findings API
+  description: Operations for managing security findings
+  humanURL: https://cloud.google.com/security-command-center/docs
+  baseURL: https://securitycenter.googleapis.com
+  tags:
+  - Findings
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-security-command-center-findings-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/security-command-center/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/security-command-center/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/security-command-center/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-security-command-center-finding-schema.json
+- aid: >-
+    google-cloud-security-command-center:google-cloud-security-command-center-notificationconfigs-api
+  name: Google Cloud Security Command Center NotificationConfigs API
+  description: Operations for managing notification configurations
+  humanURL: https://cloud.google.com/security-command-center/docs
+  baseURL: https://securitycenter.googleapis.com
+  tags:
+  - NotificationConfigs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-security-command-center-notificationconfigs-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/security-command-center/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/security-command-center/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/security-command-center/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-security-command-center-finding-schema.json
+- aid: google-cloud-security-command-center:google-cloud-security-command-center-sources-api
+  name: Google Cloud Security Command Center Sources API
+  description: Operations for managing security sources
+  humanURL: https://cloud.google.com/security-command-center/docs
+  baseURL: https://securitycenter.googleapis.com
+  tags:
+  - Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-security-command-center-sources-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/security-command-center/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/security-command-center/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/security-command-center/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-security-command-center/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-security-command-center-agentic-access.yml
   - type: VulnerabilityDisclosure
