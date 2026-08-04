@@ -1,0 +1,408 @@
+{
+  "info": {
+    "_postman_id": "ffac30e2-a73c-40dc-846d-898e9313438d",
+    "name": "Google Cloud Security Command Center Assets Sources API",
+    "description": "The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:44.000Z",
+    "updatedAt": "2026-07-28T01:48:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ffac30e2-a73c-40dc-846d-898e9313438d"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "sources",
+              "item": [
+                {
+                  "name": "Google Cloud Security Command Center List sources",
+                  "id": "c032ae1a-44b4-48bf-9efd-eb256f0330e3",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId/sources?pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId",
+                        "sources"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return",
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Token for pagination",
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "fc203a0a-c923-4b72-addf-1a587078cad5",
+                          "key": "organizationId",
+                          "value": "<string>",
+                          "description": "(Required) The organization ID"
+                        }
+                      ]
+                    },
+                    "description": "Lists all sources belonging to an organization."
+                  },
+                  "response": [
+                    {
+                      "id": "2de54b43-af9e-44e0-8c7a-3242df31caff",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/sources?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "sources"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of results to return",
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Token for pagination",
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"sources\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:48:45.000Z",
+                      "updatedAt": "2026-07-28T01:48:45.000Z",
+                      "uid": "35240-2de54b43-af9e-44e0-8c7a-3242df31caff"
+                    },
+                    {
+                      "id": "22f3a154-3a6a-413d-9a33-bd196ba53e1a",
+                      "name": "Unauthorized",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/sources?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "sources"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of results to return",
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Token for pagination",
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:48:45.000Z",
+                      "updatedAt": "2026-07-28T01:48:45.000Z",
+                      "uid": "35240-22f3a154-3a6a-413d-9a33-bd196ba53e1a"
+                    },
+                    {
+                      "id": "aef23552-957e-4559-93dd-ab211c7cef68",
+                      "name": "Forbidden",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/sources?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "sources"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of results to return",
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Token for pagination",
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:48:45.000Z",
+                      "updatedAt": "2026-07-28T01:48:45.000Z",
+                      "uid": "35240-aef23552-957e-4559-93dd-ab211c7cef68"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:45.000Z",
+                  "updatedAt": "2026-07-28T01:48:45.000Z",
+                  "uid": "35240-c032ae1a-44b4-48bf-9efd-eb256f0330e3"
+                },
+                {
+                  "name": "Google Cloud Security Command Center Create a source",
+                  "id": "d41635e5-dea1-4eab-aba2-856db34a803b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId/sources",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId",
+                        "sources"
+                      ],
+                      "variable": [
+                        {
+                          "id": "68e0d358-2dc0-4275-b86e-8371aa233c24",
+                          "key": "organizationId",
+                          "value": "<string>",
+                          "description": "(Required) The organization ID"
+                        }
+                      ]
+                    },
+                    "description": "Creates a source within an organization."
+                  },
+                  "response": [
+                    {
+                      "id": "db2cb29b-3ccc-4259-8441-cc4c915378da",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/sources",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "sources"
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:48:45.000Z",
+                      "updatedAt": "2026-07-28T01:48:45.000Z",
+                      "uid": "35240-db2cb29b-3ccc-4259-8441-cc4c915378da"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:45.000Z",
+                  "updatedAt": "2026-07-28T01:48:45.000Z",
+                  "uid": "35240-d41635e5-dea1-4eab-aba2-856db34a803b"
+                }
+              ],
+              "id": "cfbf1885-3a8d-489c-b78d-dac9332ac76d",
+              "createdAt": "2026-07-28T01:48:45.000Z",
+              "updatedAt": "2026-07-28T01:48:45.000Z",
+              "uid": "35240-cfbf1885-3a8d-489c-b78d-dac9332ac76d"
+            }
+          ],
+          "id": "d79a922d-2b0e-46ad-805a-419066aaf581",
+          "createdAt": "2026-07-28T01:48:45.000Z",
+          "updatedAt": "2026-07-28T01:48:45.000Z",
+          "uid": "35240-d79a922d-2b0e-46ad-805a-419066aaf581"
+        }
+      ],
+      "id": "d2352c10-9fc6-4f95-a5f0-fd36c0d59078",
+      "createdAt": "2026-07-28T01:48:45.000Z",
+      "updatedAt": "2026-07-28T01:48:45.000Z",
+      "uid": "35240-d2352c10-9fc6-4f95-a5f0-fd36c0d59078"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://securitycenter.googleapis.com/v1"
+    }
+  ]
+}

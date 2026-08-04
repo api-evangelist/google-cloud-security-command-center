@@ -1,0 +1,382 @@
+{
+  "info": {
+    "_postman_id": "7bdc9906-8bc0-49af-b76e-1224c91e7c50",
+    "name": "Google Cloud Security Command Center Assets Findings API",
+    "description": "The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:31.000Z",
+    "updatedAt": "2026-07-28T01:48:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7bdc9906-8bc0-49af-b76e-1224c91e7c50"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "sources",
+              "item": [
+                {
+                  "name": "{sourceId}",
+                  "item": [
+                    {
+                      "name": "findings",
+                      "item": [
+                        {
+                          "name": "Google Cloud Security Command Center List findings",
+                          "id": "496b9a98-d54e-4010-b5f4-1c1b0eb4e6e2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/organizations/:organizationId/sources/:sourceId/findings?pageSize=<integer>&pageToken=<string>&filter=<string>&orderBy=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "organizations",
+                                ":organizationId",
+                                "sources",
+                                ":sourceId",
+                                "findings"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The maximum number of results to return",
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "description": "Token for pagination",
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Expression that defines the filter to apply across findings",
+                                  "key": "filter",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Expression that defines what fields and order to use for sorting",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f580b2dd-34a3-4827-901d-ac1f6ea3a689",
+                                  "key": "organizationId",
+                                  "value": "<string>",
+                                  "description": "(Required) The organization ID"
+                                },
+                                {
+                                  "id": "c62d1690-4c97-47ef-9cb5-13cb048d6172",
+                                  "key": "sourceId",
+                                  "value": "<string>",
+                                  "description": "(Required) The source ID"
+                                }
+                              ]
+                            },
+                            "description": "Lists an organization or source's findings. To list across all sources use a sourceId of -."
+                          },
+                          "response": [
+                            {
+                              "id": "cefdf7f5-57a7-4156-921e-694c4c32b4a5",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/sources/:sourceId/findings?pageSize=<integer>&pageToken=<string>&filter=<string>&orderBy=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "sources",
+                                    ":sourceId",
+                                    "findings"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The maximum number of results to return",
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "description": "Token for pagination",
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Expression that defines the filter to apply across findings",
+                                      "key": "filter",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Expression that defines what fields and order to use for sorting",
+                                      "key": "orderBy",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "organizationId"
+                                    },
+                                    {
+                                      "key": "sourceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"listFindingsResults\": [\n    {\n      \"finding\": {\n        \"name\": \"<string>\",\n        \"parent\": \"<string>\",\n        \"state\": \"ACTIVE\",\n        \"category\": \"<string>\",\n        \"resourceName\": \"<string>\",\n        \"severity\": \"HIGH\",\n        \"eventTime\": \"<dateTime>\",\n        \"createTime\": \"<dateTime>\"\n      }\n    },\n    {\n      \"finding\": {\n        \"name\": \"<string>\",\n        \"parent\": \"<string>\",\n        \"state\": \"INACTIVE\",\n        \"category\": \"<string>\",\n        \"resourceName\": \"<string>\",\n        \"severity\": \"CRITICAL\",\n        \"eventTime\": \"<dateTime>\",\n        \"createTime\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"totalSize\": \"<integer>\"\n}",
+                              "createdAt": "2026-07-28T01:48:31.000Z",
+                              "updatedAt": "2026-07-28T01:48:31.000Z",
+                              "uid": "35240-cefdf7f5-57a7-4156-921e-694c4c32b4a5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:31.000Z",
+                          "updatedAt": "2026-07-28T01:48:31.000Z",
+                          "uid": "35240-496b9a98-d54e-4010-b5f4-1c1b0eb4e6e2"
+                        },
+                        {
+                          "name": "Google Cloud Security Command Center Create a finding",
+                          "id": "46e52149-c123-440d-9be4-a747f4cd4821",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"parent\": \"<string>\",\n  \"state\": \"INACTIVE\",\n  \"category\": \"<string>\",\n  \"resourceName\": \"<string>\",\n  \"severity\": \"LOW\",\n  \"eventTime\": \"<dateTime>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/organizations/:organizationId/sources/:sourceId/findings?findingId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "organizations",
+                                ":organizationId",
+                                "sources",
+                                ":sourceId",
+                                "findings"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) Unique identifier for the finding",
+                                  "key": "findingId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "34bb38e3-3f3b-4366-87f9-6070433da592",
+                                  "key": "organizationId",
+                                  "value": "<string>",
+                                  "description": "(Required) The organization ID"
+                                },
+                                {
+                                  "id": "95287d0c-8275-4412-8700-0e196a31bfbd",
+                                  "key": "sourceId",
+                                  "value": "<string>",
+                                  "description": "(Required) The source ID"
+                                }
+                              ]
+                            },
+                            "description": "Creates a finding within a source."
+                          },
+                          "response": [
+                            {
+                              "id": "f0b285f2-f365-4df7-8cbe-f1794cdef8da",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"parent\": \"<string>\",\n  \"state\": \"INACTIVE\",\n  \"category\": \"<string>\",\n  \"resourceName\": \"<string>\",\n  \"severity\": \"LOW\",\n  \"eventTime\": \"<dateTime>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/organizations/:organizationId/sources/:sourceId/findings?findingId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "organizations",
+                                    ":organizationId",
+                                    "sources",
+                                    ":sourceId",
+                                    "findings"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) Unique identifier for the finding",
+                                      "key": "findingId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "organizationId"
+                                    },
+                                    {
+                                      "key": "sourceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"parent\": \"<string>\",\n  \"state\": \"INACTIVE\",\n  \"category\": \"<string>\",\n  \"resourceName\": \"<string>\",\n  \"severity\": \"LOW\",\n  \"eventTime\": \"<dateTime>\",\n  \"createTime\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T01:48:31.000Z",
+                              "updatedAt": "2026-07-28T01:48:31.000Z",
+                              "uid": "35240-f0b285f2-f365-4df7-8cbe-f1794cdef8da"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:31.000Z",
+                          "updatedAt": "2026-07-28T01:48:31.000Z",
+                          "uid": "35240-46e52149-c123-440d-9be4-a747f4cd4821"
+                        }
+                      ],
+                      "id": "0258cdae-a3d3-485c-a046-d899dc2a9037",
+                      "createdAt": "2026-07-28T01:48:31.000Z",
+                      "updatedAt": "2026-07-28T01:48:31.000Z",
+                      "uid": "35240-0258cdae-a3d3-485c-a046-d899dc2a9037"
+                    }
+                  ],
+                  "id": "4f8d6e43-699c-4b0a-8a61-cde38eaea215",
+                  "createdAt": "2026-07-28T01:48:31.000Z",
+                  "updatedAt": "2026-07-28T01:48:31.000Z",
+                  "uid": "35240-4f8d6e43-699c-4b0a-8a61-cde38eaea215"
+                }
+              ],
+              "id": "3b09da66-4f2a-45f1-bee3-c2745224db18",
+              "createdAt": "2026-07-28T01:48:31.000Z",
+              "updatedAt": "2026-07-28T01:48:31.000Z",
+              "uid": "35240-3b09da66-4f2a-45f1-bee3-c2745224db18"
+            }
+          ],
+          "id": "bea9f664-7718-49dc-84eb-17043f842b41",
+          "createdAt": "2026-07-28T01:48:31.000Z",
+          "updatedAt": "2026-07-28T01:48:31.000Z",
+          "uid": "35240-bea9f664-7718-49dc-84eb-17043f842b41"
+        }
+      ],
+      "id": "efae617c-7782-4b22-a805-8a674184459b",
+      "createdAt": "2026-07-28T01:48:31.000Z",
+      "updatedAt": "2026-07-28T01:48:31.000Z",
+      "uid": "35240-efae617c-7782-4b22-a805-8a674184459b"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://securitycenter.googleapis.com/v1"
+    }
+  ]
+}

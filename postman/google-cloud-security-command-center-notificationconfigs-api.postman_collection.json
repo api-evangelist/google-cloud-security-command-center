@@ -1,0 +1,318 @@
+{
+  "info": {
+    "_postman_id": "d5691e2e-930b-49fd-908e-0c374ea4a21f",
+    "name": "Google Cloud Security Command Center Assets NotificationConfigs API",
+    "description": "The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:32.000Z",
+    "updatedAt": "2026-07-28T01:48:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d5691e2e-930b-49fd-908e-0c374ea4a21f"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "notificationConfigs",
+              "item": [
+                {
+                  "name": "Google Cloud Security Command Center List notification configs",
+                  "id": "1a121afe-a2d3-485e-b635-ecf01731f24c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId/notificationConfigs?pageSize=<integer>&pageToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId",
+                        "notificationConfigs"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return",
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Token for pagination",
+                          "key": "pageToken",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "8dc27c71-94a8-4cc7-a6f4-571059475825",
+                          "key": "organizationId",
+                          "value": "<string>",
+                          "description": "(Required) The organization ID"
+                        }
+                      ]
+                    },
+                    "description": "Lists notification configs for an organization."
+                  },
+                  "response": [
+                    {
+                      "id": "e1c48d73-eed7-4627-9497-d314e24032f9",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/notificationConfigs?pageSize=<integer>&pageToken=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "notificationConfigs"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of results to return",
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Token for pagination",
+                              "key": "pageToken",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"notificationConfigs\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"pubsubTopic\": \"<string>\",\n      \"streamingConfig\": {\n        \"filter\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"pubsubTopic\": \"<string>\",\n      \"streamingConfig\": {\n        \"filter\": \"<string>\"\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:48:32.000Z",
+                      "updatedAt": "2026-07-28T01:48:32.000Z",
+                      "uid": "35240-e1c48d73-eed7-4627-9497-d314e24032f9"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:32.000Z",
+                  "updatedAt": "2026-07-28T01:48:32.000Z",
+                  "uid": "35240-1a121afe-a2d3-485e-b635-ecf01731f24c"
+                },
+                {
+                  "name": "Google Cloud Security Command Center Create a notification config",
+                  "id": "f2d547c8-030d-4bb5-a250-892080d64e5f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"pubsubTopic\": \"<string>\",\n  \"streamingConfig\": {\n    \"filter\": \"<string>\"\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId/notificationConfigs?configId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId",
+                        "notificationConfigs"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) Unique identifier for the notification config",
+                          "key": "configId",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "6b1e31d6-9ecc-43b0-9f5b-1e95fa3a9854",
+                          "key": "organizationId",
+                          "value": "<string>",
+                          "description": "(Required) The organization ID"
+                        }
+                      ]
+                    },
+                    "description": "Creates a notification config for an organization."
+                  },
+                  "response": [
+                    {
+                      "id": "81e54394-0428-45d0-9e22-7decfbcf1e3b",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"pubsubTopic\": \"<string>\",\n  \"streamingConfig\": {\n    \"filter\": \"<string>\"\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/notificationConfigs?configId=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "notificationConfigs"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) Unique identifier for the notification config",
+                              "key": "configId",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"pubsubTopic\": \"<string>\",\n  \"streamingConfig\": {\n    \"filter\": \"<string>\"\n  }\n}",
+                      "createdAt": "2026-07-28T01:48:32.000Z",
+                      "updatedAt": "2026-07-28T01:48:32.000Z",
+                      "uid": "35240-81e54394-0428-45d0-9e22-7decfbcf1e3b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:32.000Z",
+                  "updatedAt": "2026-07-28T01:48:32.000Z",
+                  "uid": "35240-f2d547c8-030d-4bb5-a250-892080d64e5f"
+                }
+              ],
+              "id": "ce580cd1-56f0-4d5c-b207-dba15706aa5d",
+              "createdAt": "2026-07-28T01:48:32.000Z",
+              "updatedAt": "2026-07-28T01:48:32.000Z",
+              "uid": "35240-ce580cd1-56f0-4d5c-b207-dba15706aa5d"
+            }
+          ],
+          "id": "569a9ff8-6bae-4d43-940b-552d034e0ac4",
+          "createdAt": "2026-07-28T01:48:32.000Z",
+          "updatedAt": "2026-07-28T01:48:32.000Z",
+          "uid": "35240-569a9ff8-6bae-4d43-940b-552d034e0ac4"
+        }
+      ],
+      "id": "9cefae88-384a-4381-96fa-ee4a6ab8aa0c",
+      "createdAt": "2026-07-28T01:48:32.000Z",
+      "updatedAt": "2026-07-28T01:48:32.000Z",
+      "uid": "35240-9cefae88-384a-4381-96fa-ee4a6ab8aa0c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://securitycenter.googleapis.com/v1"
+    }
+  ]
+}

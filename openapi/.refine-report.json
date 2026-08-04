@@ -1,0 +1,20 @@
+{
+  "provider": "google-cloud-security-command-center",
+  "sources": [
+    "google-cloud-security-command-center-assets-api-openapi.yml",
+    "google-cloud-security-command-center-findings-api-openapi.yml",
+    "google-cloud-security-command-center-notificationconfigs-api-openapi.yml",
+    "google-cloud-security-command-center-sources-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-security-command-center-assets-api-openapi.yml",
+    "google-cloud-security-command-center-findings-api-openapi.yml",
+    "google-cloud-security-command-center-notificationconfigs-api-openapi.yml",
+    "google-cloud-security-command-center-sources-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,196 @@
+{
+  "info": {
+    "_postman_id": "fc3d2fa9-4f93-4ab8-9c92-8d368667d9eb",
+    "name": "Google Cloud Security Command Center Assets API",
+    "description": "The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.\n\nContact Support:\n Name: Google Cloud Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:15.000Z",
+    "updatedAt": "2026-07-28T01:48:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fc3d2fa9-4f93-4ab8-9c92-8d368667d9eb"
+  },
+  "item": [
+    {
+      "name": "organizations",
+      "item": [
+        {
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "assets",
+              "item": [
+                {
+                  "name": "Google Cloud Security Command Center List assets",
+                  "id": "b3cb3ec6-01e2-4100-87ae-8a187233abdd",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId/assets?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId",
+                        "assets"
+                      ],
+                      "query": [
+                        {
+                          "description": "The maximum number of results to return",
+                          "key": "pageSize",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Token for pagination",
+                          "key": "pageToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Expression that defines the filter to apply across assets",
+                          "key": "filter",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "59860f0e-ab39-4cd2-afff-9b8a325f7761",
+                          "key": "organizationId",
+                          "value": "<string>",
+                          "description": "(Required) The organization ID"
+                        }
+                      ]
+                    },
+                    "description": "Lists an organization's assets."
+                  },
+                  "response": [
+                    {
+                      "id": "b986bf22-7167-46ba-b29c-3fef0838f4a5",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/organizations/:organizationId/assets?pageSize=<integer>&pageToken=<string>&filter=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "organizations",
+                            ":organizationId",
+                            "assets"
+                          ],
+                          "query": [
+                            {
+                              "description": "The maximum number of results to return",
+                              "key": "pageSize",
+                              "value": "<integer>"
+                            },
+                            {
+                              "description": "Token for pagination",
+                              "key": "pageToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Expression that defines the filter to apply across assets",
+                              "key": "filter",
+                              "value": "<string>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "organizationId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"listAssetsResults\": [\n    {\n      \"asset\": {\n        \"name\": \"<string>\",\n        \"securityCenterProperties\": {},\n        \"resourceProperties\": {}\n      }\n    },\n    {\n      \"asset\": {\n        \"name\": \"<string>\",\n        \"securityCenterProperties\": {},\n        \"resourceProperties\": {}\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"totalSize\": \"<integer>\"\n}",
+                      "createdAt": "2026-07-28T01:48:15.000Z",
+                      "updatedAt": "2026-07-28T01:48:15.000Z",
+                      "uid": "35240-b986bf22-7167-46ba-b29c-3fef0838f4a5"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:48:15.000Z",
+                  "updatedAt": "2026-07-28T01:48:15.000Z",
+                  "uid": "35240-b3cb3ec6-01e2-4100-87ae-8a187233abdd"
+                }
+              ],
+              "id": "e6d6eab1-010d-4bc2-87c7-29a880ca4f7e",
+              "createdAt": "2026-07-28T01:48:15.000Z",
+              "updatedAt": "2026-07-28T01:48:15.000Z",
+              "uid": "35240-e6d6eab1-010d-4bc2-87c7-29a880ca4f7e"
+            }
+          ],
+          "id": "c0832852-9a4b-4d2d-9201-9f19a522d9e1",
+          "createdAt": "2026-07-28T01:48:15.000Z",
+          "updatedAt": "2026-07-28T01:48:15.000Z",
+          "uid": "35240-c0832852-9a4b-4d2d-9201-9f19a522d9e1"
+        }
+      ],
+      "id": "f03cc38f-9422-4150-a688-af2684208327",
+      "createdAt": "2026-07-28T01:48:15.000Z",
+      "updatedAt": "2026-07-28T01:48:15.000Z",
+      "uid": "35240-f03cc38f-9422-4150-a688-af2684208327"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://securitycenter.googleapis.com/v1"
+    }
+  ]
+}
