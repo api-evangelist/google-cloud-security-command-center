@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "e939ed3f-db2d-4972-aad5-186bf922de4c",
+      "name": "Assets",
+      "description": {
+        "content": "Operations for listing and managing cloud assets",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "18b22162-c7f2-4788-baae-67f88bca8550",
+          "name": "Google Cloud Security Command Center List assets",
+          "request": {
+            "name": "Google Cloud Security Command Center List assets",
+            "description": {
+              "content": "Lists an organization's assets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "organizations",
+                ":organizationId",
+                "assets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>",
+                  "description": "The maximum number of results to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>",
+                  "description": "Token for pagination"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>",
+                  "description": "Expression that defines the filter to apply across assets"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) The organization ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be149e30-da2b-4481-bb99-0e845a8d77e6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organizationId",
+                    "assets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) The organization ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"listAssetsResults\": [\n    {\n      \"asset\": {\n        \"name\": \"string\",\n        \"securityCenterProperties\": {},\n        \"resourceProperties\": {}\n      }\n    },\n    {\n      \"asset\": {\n        \"name\": \"string\",\n        \"securityCenterProperties\": {},\n        \"resourceProperties\": {}\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\",\n  \"totalSize\": 3855\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://securitycenter.googleapis.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "09b95915-67b7-46ea-9a5c-6ce2a966d891",
+    "name": "Google Cloud Security Command Center Assets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.\n\nContact Support:\n Name: Google Cloud Support",
+      "type": "text/plain"
+    }
+  }
+}

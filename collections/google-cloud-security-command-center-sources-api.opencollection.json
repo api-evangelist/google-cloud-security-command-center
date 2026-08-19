@@ -1,0 +1,84 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Security Command Center Assets Sources API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center List sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/sources",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for pagination"
+              }
+            ]
+          },
+          "docs": "Lists all sources belonging to an organization."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center Create a source",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/sources",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a source within an organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

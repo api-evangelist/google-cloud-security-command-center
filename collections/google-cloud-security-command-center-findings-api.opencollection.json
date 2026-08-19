@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Security Command Center Assets Findings API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Findings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center List findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/sources/:sourceId/findings",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              },
+              {
+                "name": "sourceId",
+                "value": "",
+                "type": "path",
+                "description": "The source ID"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for pagination"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Expression that defines the filter to apply across findings"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Expression that defines what fields and order to use for sorting"
+              }
+            ]
+          },
+          "docs": "Lists an organization or source's findings. To list across all sources use a sourceId of -."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center Create a finding",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/sources/:sourceId/findings",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              },
+              {
+                "name": "sourceId",
+                "value": "",
+                "type": "path",
+                "description": "The source ID"
+              },
+              {
+                "name": "findingId",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier for the finding"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a finding within a source."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

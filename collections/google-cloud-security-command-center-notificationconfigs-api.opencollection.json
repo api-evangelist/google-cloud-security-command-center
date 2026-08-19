@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Security Command Center Assets NotificationConfigs API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NotificationConfigs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center List notification configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/notificationConfigs",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "The maximum number of results to return"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for pagination"
+              }
+            ]
+          },
+          "docs": "Lists notification configs for an organization."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Security Command Center Create a notification config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://securitycenter.googleapis.com/v1/organizations/:organizationId/notificationConfigs",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "",
+                "type": "path",
+                "description": "The organization ID"
+              },
+              {
+                "name": "configId",
+                "value": "",
+                "type": "query",
+                "description": "Unique identifier for the notification config"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a notification config for an organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
