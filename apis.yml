@@ -5,6 +5,18 @@ description: >-
   organizations identify misconfigurations, vulnerabilities, and threats across their cloud assets. It provides
   centralized visibility into cloud resources, security findings, and compliance status, enabling security teams to
   detect, investigate, and respond to threats.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
