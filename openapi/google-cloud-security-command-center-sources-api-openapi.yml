@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Security Command Center Assets Sources API
+  title: Google Cloud Security Command Center Sources API
   description: The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.
   version: v1
   contact:
@@ -60,29 +60,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/Source'
 components:
-  schemas:
-    ListSourcesResponse:
-      type: object
-      properties:
-        sources:
-          type: array
-          items:
-            $ref: '#/components/schemas/Source'
-        nextPageToken:
-          type: string
-    Source:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The relative resource name of the source
-        displayName:
-          type: string
-          description: The source's display name
-        description:
-          type: string
-          description: The description of the source
   parameters:
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
     organizationId:
       name: organizationId
       in: path
@@ -96,12 +80,28 @@ components:
       description: Token for pagination
       schema:
         type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: The maximum number of results to return
-      schema:
-        type: integer
+  schemas:
+    Source:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The relative resource name of the source
+        displayName:
+          type: string
+          description: The source's display name
+        description:
+          type: string
+          description: The description of the source
+    ListSourcesResponse:
+      type: object
+      properties:
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Source'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

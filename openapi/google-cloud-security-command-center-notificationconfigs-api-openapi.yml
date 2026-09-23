@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Security Command Center Assets Notification Configs API
+  title: Google Cloud Security Command Center Notification Configs…
   description: The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.
   version: v1
   contact:
@@ -62,6 +62,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotificationConfig'
 components:
+  parameters:
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
+      schema:
+        type: string
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
+      schema:
+        type: string
   schemas:
     NotificationConfig:
       type: object
@@ -90,26 +110,6 @@ components:
             $ref: '#/components/schemas/NotificationConfig'
         nextPageToken:
           type: string
-  parameters:
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      description: The organization ID
-      schema:
-        type: string
-    pageToken:
-      name: pageToken
-      in: query
-      description: Token for pagination
-      schema:
-        type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: The maximum number of results to return
-      schema:
-        type: integer
   securitySchemes:
     oauth2:
       type: oauth2

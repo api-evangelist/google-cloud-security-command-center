@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Security Command Center Assets Findings API
+  title: Google Cloud Security Command Center Findings API
   description: The Security Command Center API provides programmatic access to manage security findings, assets, sources, and notification configurations across an organization's Google Cloud resources. It enables security teams to detect threats, identify vulnerabilities, and manage compliance posture.
   version: v1
   contact:
@@ -75,11 +75,16 @@ paths:
                 $ref: '#/components/schemas/Finding'
 components:
   parameters:
-    sourceId:
-      name: sourceId
-      in: path
-      required: true
-      description: The source ID
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
       schema:
         type: string
     organizationId:
@@ -89,19 +94,28 @@ components:
       description: The organization ID
       schema:
         type: string
-    pageToken:
-      name: pageToken
-      in: query
-      description: Token for pagination
+    sourceId:
+      name: sourceId
+      in: path
+      required: true
+      description: The source ID
       schema:
         type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: The maximum number of results to return
-      schema:
-        type: integer
   schemas:
+    ListFindingsResponse:
+      type: object
+      properties:
+        listFindingsResults:
+          type: array
+          items:
+            type: object
+            properties:
+              finding:
+                $ref: '#/components/schemas/Finding'
+        nextPageToken:
+          type: string
+        totalSize:
+          type: integer
     Finding:
       type: object
       properties:
@@ -139,20 +153,6 @@ components:
           type: string
           format: date-time
           description: The time at which the finding was created
-    ListFindingsResponse:
-      type: object
-      properties:
-        listFindingsResults:
-          type: array
-          items:
-            type: object
-            properties:
-              finding:
-                $ref: '#/components/schemas/Finding'
-        nextPageToken:
-          type: string
-        totalSize:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2
