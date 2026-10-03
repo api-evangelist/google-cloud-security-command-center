@@ -91,11 +91,10 @@ components:
         nextPageToken:
           type: string
   parameters:
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      description: The organization ID
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
       schema:
         type: string
     pageSize:
@@ -104,10 +103,11 @@ components:
       description: The maximum number of results to return
       schema:
         type: integer
-    pageToken:
-      name: pageToken
-      in: query
-      description: Token for pagination
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
       schema:
         type: string
   securitySchemes:

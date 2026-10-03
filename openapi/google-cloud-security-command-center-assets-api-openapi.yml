@@ -63,12 +63,12 @@ components:
         totalSize:
           type: integer
   parameters:
-    pageSize:
-      name: pageSize
+    pageToken:
+      name: pageToken
       in: query
-      description: The maximum number of results to return
+      description: Token for pagination
       schema:
-        type: integer
+        type: string
     organizationId:
       name: organizationId
       in: path
@@ -76,12 +76,12 @@ components:
       description: The organization ID
       schema:
         type: string
-    pageToken:
-      name: pageToken
+    pageSize:
+      name: pageSize
       in: query
-      description: Token for pagination
+      description: The maximum number of results to return
       schema:
-        type: string
+        type: integer
   securitySchemes:
     oauth2:
       type: oauth2
