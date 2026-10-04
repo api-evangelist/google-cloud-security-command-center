@@ -1,0 +1,25 @@
+slug: google-cloud-security-command-center
+provider: Google Cloud Security Command Center
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Findings
+  spec_file: google-cloud-security-command-center-findings-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.8
+  evidence: '"List findings", "Create a finding"; "enables security teams to detect threats, identify
+    vulnerabilities, and manage compliance posture"'
+  reason: Security findings lifecycle for threat and vulnerability detection/investigation — threat detection
+    and response. Ambiguity between BC-620.30 and BC-620.40 since findings cover both threats and vulnerabilities.
