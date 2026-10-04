@@ -75,20 +75,6 @@ paths:
                 $ref: '#/components/schemas/Finding'
 components:
   schemas:
-    ListFindingsResponse:
-      type: object
-      properties:
-        listFindingsResults:
-          type: array
-          items:
-            type: object
-            properties:
-              finding:
-                $ref: '#/components/schemas/Finding'
-        nextPageToken:
-          type: string
-        totalSize:
-          type: integer
     Finding:
       type: object
       properties:
@@ -126,7 +112,28 @@ components:
           type: string
           format: date-time
           description: The time at which the finding was created
+    ListFindingsResponse:
+      type: object
+      properties:
+        listFindingsResults:
+          type: array
+          items:
+            type: object
+            properties:
+              finding:
+                $ref: '#/components/schemas/Finding'
+        nextPageToken:
+          type: string
+        totalSize:
+          type: integer
   parameters:
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
+      schema:
+        type: string
     pageToken:
       name: pageToken
       in: query
@@ -139,13 +146,6 @@ components:
       description: The maximum number of results to return
       schema:
         type: integer
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      description: The organization ID
-      schema:
-        type: string
     sourceId:
       name: sourceId
       in: path

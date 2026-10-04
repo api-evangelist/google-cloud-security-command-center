@@ -62,6 +62,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotificationConfig'
 components:
+  parameters:
+    organizationId:
+      name: organizationId
+      in: path
+      required: true
+      description: The organization ID
+      schema:
+        type: string
+    pageToken:
+      name: pageToken
+      in: query
+      description: Token for pagination
+      schema:
+        type: string
+    pageSize:
+      name: pageSize
+      in: query
+      description: The maximum number of results to return
+      schema:
+        type: integer
   schemas:
     NotificationConfig:
       type: object
@@ -90,26 +110,6 @@ components:
             $ref: '#/components/schemas/NotificationConfig'
         nextPageToken:
           type: string
-  parameters:
-    pageToken:
-      name: pageToken
-      in: query
-      description: Token for pagination
-      schema:
-        type: string
-    pageSize:
-      name: pageSize
-      in: query
-      description: The maximum number of results to return
-      schema:
-        type: integer
-    organizationId:
-      name: organizationId
-      in: path
-      required: true
-      description: The organization ID
-      schema:
-        type: string
   securitySchemes:
     oauth2:
       type: oauth2
