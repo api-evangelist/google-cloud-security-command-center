@@ -118,6 +118,12 @@ apis:
   - type: JSONSchema
     url: json-schema/google-cloud-security-command-center-finding-schema.json
 common:
+  - type: Plans
+    url: plans/google-cloud-security-command-center-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-cloud-security-command-center-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-security-command-center-finops.yml
   - type: CapabilityMap
     url: capabilities/google-cloud-security-command-center-capability-edges.yml
     name: Google Cloud Security Command Center Business Capability Map
