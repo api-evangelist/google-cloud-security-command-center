@@ -1,4 +1,4 @@
-# Google Cloud Security Command Center (google-cloud-security-command-center)
+# Google Cloud Security Command Center
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,159 @@
 
 Google Cloud Security Command Center (SCC) is a security and risk management platform for Google Cloud that helps organizations identify misconfigurations, vulnerabilities, and threats across their cloud assets. It provides centralized visibility into cloud resources, security findings, and compliance status, enabling security teams to detect, investigate, and respond to threats.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-security-command-center/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-security-command-center/refs/heads/main/apis.yml)
+**Areas:** Cloud Security · Compliance · Risk Management · Security · Threat Detection · Vulnerability Management
 
-## Scope
+## Google Cloud Security Command Center on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Security Command Center is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-security-command-center/](https://apis.io/providers/google-cloud-security-command-center/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- Cloud Security
-- Compliance
-- Risk Management
-- Security
-- Threat Detection
-- Vulnerability Management
+- [Google Cloud Security Command Center Assets API](https://apis.io/apis/google-cloud-security-command-center/google-cloud-security-command-center-assets-api/) — Operations for listing and managing cloud assets
+- [Google Cloud Security Command Center Findings API](https://apis.io/apis/google-cloud-security-command-center/google-cloud-security-command-center-findings-api/) — Operations for managing security findings
+- [Google Cloud Security Command Center NotificationConfigs API](https://apis.io/apis/google-cloud-security-command-center/google-cloud-security-command-center-notificationconfigs-api/) — Operations for managing notification configurations
+- [Google Cloud Security Command Center Sources API](https://apis.io/apis/google-cloud-security-command-center/google-cloud-security-command-center-sources-api/) — Operations for managing security sources
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Security Command Center API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Security Command Center API provides programmatic access to security findings, assets, and sources within Google Cloud. Developers can use the API to list and manage security findings, create and manage notification configs, run asset discovery, and configure organization-level security settings.
+- [Google Cloud Security Command Center Agentic Access](https://apis.io/agentic-access/google-cloud-security-command-center/google-cloud-security-command-center-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/security-command-center/docs](https://cloud.google.com/security-command-center/docs)
-- **Base URL:** `https://securitycenter.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Assets
-- Security Findings
-- Threat Detection
-- Vulnerability Scanning
+- [Google Cloud Security Command Center Finding](https://apis.io/schemas/google-cloud-security-command-center/google-cloud-security-command-center-finding/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/security-command-center/docs/reference/rest)
-- [OpenAPI](openapi/security-command-center-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/security-command-center-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/security-command-center-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/security-command-center/docs/authentication)
-- [Getting Started](https://cloud.google.com/security-command-center/docs/quickstart)
-- [JSON Schema](json-schema/google-cloud-security-command-center-finding-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Security Command Center Context](https://apis.io/jsonld/google-cloud-security-command-center/google-cloud-security-command-center-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/security-command-center)
-- [Getting Started](https://cloud.google.com/security-command-center/docs/quickstart)
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Security Command Center Assets API](https://apis.io/collections/google-cloud-security-command-center/open-google-cloud-security-command-center-assets-api/)
+- [Google Cloud Security Command Center Assets Findings API](https://apis.io/collections/google-cloud-security-command-center/open-google-cloud-security-command-center-findings-api/)
+- [Google Cloud Security Command Center Assets NotificationConfigs API](https://apis.io/collections/google-cloud-security-command-center/open-google-cloud-security-command-center-notificationconfigs-api/)
+- [Google Cloud Security Command Center Assets Sources API](https://apis.io/collections/google-cloud-security-command-center/open-google-cloud-security-command-center-sources-api/)
+- [Google Cloud Security Command Center API](https://apis.io/collections/google-cloud-security-command-center/open-security-command-center-api/)
+- [Google Cloud Security Command Center Assets API](https://apis.io/collections/google-cloud-security-command-center/postman-google-cloud-security-command-center-assets-api/)
+- [Google Cloud Security Command Center Assets Findings API](https://apis.io/collections/google-cloud-security-command-center/postman-google-cloud-security-command-center-findings-api/)
+- [Google Cloud Security Command Center Assets NotificationConfigs API](https://apis.io/collections/google-cloud-security-command-center/postman-google-cloud-security-command-center-notificationconfigs-api/)
+- [Google Cloud Security Command Center Assets Sources API](https://apis.io/collections/google-cloud-security-command-center/postman-google-cloud-security-command-center-sources-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Security Command Center — jsonschema rules](https://apis.io/rules/google-cloud-security-command-center/google-cloud-security-command-center-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Security Command Center Authentication](https://apis.io/security/google-cloud-security-command-center/google-cloud-security-command-center-authentication/)
+- [Google Cloud Security Command Center Domain Security](https://apis.io/security/google-cloud-security-command-center/google-cloud-security-command-center-domain-security/)
+- [Google Cloud Security Command Center Vulnerability Disclosure](https://apis.io/security/google-cloud-security-command-center/google-cloud-security-command-center-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Security Command Center Scopes](https://apis.io/scopes/google-cloud-security-command-center/google-cloud-security-command-center-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Security Command Center Plans Pricing](https://apis.io/plans/google-cloud-security-command-center/google-cloud-security-command-center-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Security Command Center Rate Limits](https://apis.io/rate-limits/google-cloud-security-command-center/google-cloud-security-command-center-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Security Command Center Finops](https://apis.io/finops/google-cloud-security-command-center/google-cloud-security-command-center-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/security-command-center/docs)
-- [Authentication](https://cloud.google.com/security-command-center/docs/authentication)
+- [Getting started](https://cloud.google.com/security-command-center/docs/quickstart)
 - [Pricing](https://cloud.google.com/security-command-center/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/security-command-center/docs/support)
-- [JSON-LD](json-ld/google-cloud-security-command-center-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Blog](https://cloud.google.com/feeds/scc-release-notes.xml)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 47.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 56.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 51.2 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-security-command-center/](https://apis.io/providers/google-cloud-security-command-center/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Security Command Center: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-security-command-center/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
